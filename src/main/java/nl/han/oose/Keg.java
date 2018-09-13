@@ -8,13 +8,19 @@ public class Keg {
         this.remainingVolumeInMl = capacityInMl;
     }
 
+
+
     public synchronized int tap(int volumeInMl) {
         if (volumeInMl > this.remainingVolumeInMl) {
             volumeInMl = this.remainingVolumeInMl;
         }
+
         this.remainingVolumeInMl -= volumeInMl;
         return volumeInMl;
     }
+
+
+
 
     public int getRemainingVolume() {
         return this.remainingVolumeInMl;
